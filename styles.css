@@ -125,6 +125,11 @@ body {
 
 /*media query */
 @media screen and (max-width: 960px) {
+    .navbar {
+        overflow: visible;
+        z-index: 1002;
+    }
+    
     .navbar__container{
         display: flex;
         justify-content: space-between;
@@ -133,6 +138,7 @@ body {
         width: 100%;
         max-width: 1300px;
         padding: 0;
+        position: relative;
     }
 
     .navbar__menu {
@@ -142,21 +148,27 @@ body {
         width: 100%;
         position: absolute;
         top: -1000px;
+        left: 0;
         opacity: 0; 
         transition: all 0.5s ease;
         height: 50vh;
         z-index: -1;
         background: #131313;
+        visibility: hidden;
     }
 
     .navbar__menu.active {
         background: #131313;
-        top: 100%;
+        top: 80px;
+        left: 0;
         opacity: 1;
         transition: all 0.5s ease;
-        z-index: 99;
+        z-index: 1001;
         height: 50vh;
         font-size: 1.6rem;
+        visibility: visible;
+        position: fixed;
+        width: 100vw;
     }
 
     #navbar__logo {
@@ -238,6 +250,7 @@ body {
     max-width: 1300px;
     padding: 0 50px;
     overflow: hidden;
+    position: relative;
 }
 
 .main__content h1 {
